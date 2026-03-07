@@ -1,0 +1,268 @@
+---
+// src/Components/TreatmentsSection.astro
+
+const clinicalItems = [
+  "Medicamentos que aumentam a densidade óssea (antirreabsortivos e anabolizantes ósseos)",
+  "Suplementação de cálcio e vitamina D personalizada",
+  "Protocolo de exercícios físicos adaptado para cada paciente",
+  "Orientação nutricional e ajuste de estilo de vida",
+  "Acompanhamento periódico com densitometria para medir evolução",
+  "Prevenção de quedas e fraturas com estratégias práticas"
+];
+
+const surgicalItems = [
+  "Vertebroplastia e cifoplastia para fraturas vertebrais com dor intensa",
+  "Fixação cirúrgica de fraturas do quadril e fêmur",
+  "Artroplastia (prótese) em casos de destruição articular por fratura",
+  "Técnicas minimamente invasivas com recuperação mais rápida",
+  "Acompanhamento pós-operatório completo e reabilitação estruturada"
+];
+---
+
+<section class="treatments-section">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <span class="eyebrow">CAMINHOS DE TRATAMENTO</span>
+      <h2 class="title">
+        Existe solução e na maioria<br />
+        das vezes, <em>sem cirurgia.</em>
+      </h2>
+      <p class="intro">
+        O tratamento da osteoporose é muito mais acessível do que as pessoas imaginam. A cirurgia é reservada para situações específicas, e mesmo quando necessária, os resultados costumam ser excelentes.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards-grid">
+
+      <!-- Clinical -->
+      <div class="card card--clinical">
+        <span class="card-badge card-badge--clinical">TRATAMENTO CLÍNICO</span>
+        <h3 class="card-title">Para a grande maioria dos casos</h3>
+        <ul class="item-list">
+          {clinicalItems.map((item) => (
+            <li class="item">
+              <span class="checkmark checkmark--teal">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Surgical -->
+      <div class="card card--surgical">
+        <span class="card-badge card-badge--surgical">INTERVENÇÃO CIRÚRGICA</span>
+        <h3 class="card-title">Quando realmente é necessária</h3>
+        <ul class="item-list">
+          {surgicalItems.map((item) => (
+            <li class="item">
+              <span class="checkmark checkmark--gold">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom stat bar -->
+    <div class="stat-bar">
+      <span class="stat-icon">✅</span>
+      <p class="stat-text">
+        <strong>Mais de 80% dos pacientes com osteoporose não precisam de cirurgia</strong>, e respondem bem ao tratamento clínico quando iniciado no momento certo.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .treatments-section {
+    background-color: #fffaf3;
+    padding: 6rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .eyebrow {
+    display: block;
+    color: #428482;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.25rem;
+  }
+
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    color: #1a2f33;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .title em {
+    font-style: italic;
+    font-weight: 400;
+    color: #428482;
+  }
+
+  .intro {
+    color: #4a5568;
+    font-size: 0.975rem;
+    line-height: 1.75;
+    margin: 0 0 3rem 0;
+    max-width: 680px;
+  }
+
+  /* ── CARDS GRID ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .card--clinical {
+    border-top: 3px solid #428482;
+  }
+
+  .card--surgical {
+    border-top: 3px solid #c8a96e;
+  }
+
+  /* Badge pill */
+  .card-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    width: fit-content;
+  }
+
+  .card-badge--clinical {
+    background-color: #e6f2f1;
+    color: #428482;
+  }
+
+  .card-badge--surgical {
+    background-color: #fdf3e3;
+    color: #b08a4e;
+  }
+
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+    color: #1a2f33;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  /* Item list */
+  .item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.55;
+  }
+
+  .item:last-child {
+    border-bottom: none;
+  }
+
+  .checkmark {
+    flex-shrink: 0;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-top: 1px;
+  }
+
+  .checkmark--teal {
+    color: #428482;
+  }
+
+  .checkmark--gold {
+    color: #c8a96e;
+  }
+
+  /* ── STAT BAR ── */
+  .stat-bar {
+    background-color: #e6f2f1;
+    border: 1px solid #c4dedd;
+    border-radius: 14px;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .stat-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .stat-text {
+    color: #2d6b69;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .stat-text strong {
+    font-weight: 700;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .treatments-section {
+      padding: 4rem 1.25rem;
+    }
+
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stat-bar {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem 1.25rem;
+    }
+  }
+</style>

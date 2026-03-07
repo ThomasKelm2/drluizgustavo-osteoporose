@@ -1,0 +1,99 @@
+---
+// src/Components/PainSection.astro
+---
+<section class="pain-section">
+  <div class="container">
+    
+    <div class="badge">
+      VOCÊ NÃO PRECISA VIVER COM MEDO
+    </div>
+    
+    <h2 class="title">
+      A <strong>OSTEOPOROSE</strong> Rouba<br />
+      Muito Mais do que a Força dos Seus Ossos
+    </h2>
+
+    <div class="content-box">
+      <p>
+        Sabe aquele medo constante de dar um passo em falso e acabar sofrendo uma fratura? De evitar caminhadas, deixar de pegar os netos no colo ou perder a confiança de sair de casa por receio de uma queda? De sentir que o seu próprio corpo se tornou frágil demais para a rotina que você ama?
+      </p>
+      <p>
+        Viver com esse alerta sempre ligado cansa e tira a sua independência. Muita gente aceita isso achando que é uma consequência inevitável da idade. Mas não é. Com a avaliação certa e um plano focado na recuperação da sua densidade óssea, é possível frear esse desgaste e voltar a viver com total segurança.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .pain-section {
+    background-color: #edf5e9;
+    padding: 5rem 1rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .container {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .badge {
+    background-color: #428482;
+    color: #ffffff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.70rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .title {
+    color: #1a3b3b;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .title strong {
+    font-weight: 800;
+  }
+
+  .content-box {
+    background-color: #e3eddb;
+    padding: 3rem 4rem;
+    border-radius: 40px;
+    width: 100%;
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.5);
+  }
+
+  .content-box p {
+    color: #2d3748;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .content-box p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .content-box {
+      padding: 2rem 1.5rem;
+      border-radius: 20px;
+    }
+  }
+</style>

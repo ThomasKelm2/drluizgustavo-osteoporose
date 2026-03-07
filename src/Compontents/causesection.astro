@@ -1,0 +1,290 @@
+---
+// src/Components/CausesSection.astro
+
+const causes = [
+  {
+    number: 1,
+    title: "Envelhecimento natural",
+    description: "A partir dos 30 anos, o corpo começa a perder massa óssea gradualmente. Esse processo se acelera na menopausa e após os 60 anos."
+  },
+  {
+    number: 2,
+    title: "Baixos níveis de cálcio e vitamina D",
+    description: "Dieta pobre em cálcio ou pouca exposição ao sol prejudicam a saúde dos ossos ao longo dos anos."
+  },
+  {
+    number: 3,
+    title: "Alterações hormonais",
+    description: "A queda no estrogênio na menopausa e a redução de testosterona nos homens aceleram a perda óssea."
+  },
+  {
+    number: 4,
+    title: "Uso prolongado de medicamentos",
+    description: "Corticoides e alguns anticonvulsivantes usados por muito tempo podem enfraquecer os ossos progressivamente."
+  },
+  {
+    number: 5,
+    title: "Sedentarismo e tabagismo",
+    description: "A falta de atividade física e o cigarro comprometem diretamente a densidade e a qualidade óssea."
+  }
+];
+---
+
+<section class="causes-section" id="causes">
+  <div class="container">
+
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+      <span class="eyebrow">ENTENDENDO O PROBLEMA</span>
+
+      <h2 class="title">
+        Por que os ossos<br />
+        ficam mais <em>frágeis?</em>
+      </h2>
+
+      <p class="intro">
+        A osteoporose não surge do nada, ela se desenvolve ao longo do tempo, muitas vezes sem dor, até que o corpo dá o primeiro aviso. Entender as causas é o primeiro passo para o tratamento.
+      </p>
+
+      <ol class="causes-list">
+        {causes.map((cause) => (
+          <li class="cause-item">
+            <div class="cause-number">{cause.number}</div>
+            <div class="cause-text">
+              <h3 class="cause-title">{cause.title}</h3>
+              <p class="cause-desc">{cause.description}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+      <div class="info-card">
+        <h3 class="card-headline">
+          A boa notícia:<br />
+          <span class="card-headline-light">diagnosticar cedo muda tudo.</span>
+        </h3>
+        <p class="card-body">
+          Com um exame simples, a densitometria óssea, é possível medir exatamente qual é o estado dos seus ossos hoje. A partir disso, o tratamento pode ser direcionado, personalizado e muito mais eficaz.
+        </p>
+        <p class="card-emphasis">
+          Não espere uma fratura para descobrir o que está acontecendo.
+        </p>
+        <a href="https://wa.me/5541999782006?text=Gostaria%20de%20marcar%20uma%20consulta%20com%20o%20Dr.%20Luiz%20para%20tratar%20a%20sa%C3%BAde%20dos%20meus%20ossos" target="_blank" rel="noopener noreferrer" class="card-cta">
+          <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157.1zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+          </svg>
+          Quero Entender Meu Caso
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .causes-section {
+    background-color: #f5f0e8;
+    padding: 6rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  /* ── LEFT COL ── */
+  .eyebrow {
+    display: block;
+    color: #428482;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.25rem;
+  }
+
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    color: #1a2f33;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .title em {
+    font-style: italic;
+    font-weight: 400;
+    color: #428482;
+  }
+
+  .intro {
+    font-family: 'Montserrat', sans-serif;
+    color: #4a5568;
+    font-size: 0.975rem;
+    line-height: 1.75;
+    margin: 0 0 2.5rem 0;
+  }
+
+  /* Numbered list */
+  .causes-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .cause-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .cause-number {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #428482;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .cause-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .cause-title {
+    font-family: 'Montserrat', sans-serif;
+    color: #428482;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .cause-desc {
+    font-family: 'Montserrat', sans-serif;
+    color: #428482;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  /* ── RIGHT COL ── */
+  .right-col {
+    position: sticky;
+    top: 6rem;
+  }
+
+  .info-card {
+    background-color: #1a2f33;
+    border-radius: 20px;
+    padding: 3rem 2.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .card-headline {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .card-headline-light {
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .card-body {
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.925rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .card-emphasis {
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .card-cta {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    background-color: #428482;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.2px;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    width: 100%;
+  }
+
+  .card-cta:hover {
+    background-color: #357572;
+    transform: translateY(-2px);
+  }
+
+  .whatsapp-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .right-col {
+      position: static;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .causes-section {
+      padding: 4rem 1.25rem;
+    }
+
+    .info-card {
+      padding: 2.25rem 1.75rem;
+    }
+  }
+</style>

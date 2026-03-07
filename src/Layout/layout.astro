@@ -1,0 +1,57 @@
+---
+// src/layouts/Layout.astro
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body class="font-sans antialiased text-[var(--color-dark)] bg-[var(--color-light)] flex flex-col min-h-screen w-full">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    /* Cores Oficiais da Marca Dr. Luiz Gustavo */
+    /* Fundo / Claro */
+    --color-light: rgb(227, 237, 219); 
+    /* Destaque / Amarelo */
+    --color-yellow: rgb(248, 174, 59); 
+    /* Principal / Verde Claro */
+    --color-teal: rgb(16, 171, 124); 
+    /* Escuro / Textos e Fundos Escuros */
+    --color-dark: rgb(25, 60, 64); 
+  }
+
+  /* Define a Montserrat como a fonte padrão de todo o projeto */
+  html {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+  
+  /* Melhora a renderização no navegador */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+</style>

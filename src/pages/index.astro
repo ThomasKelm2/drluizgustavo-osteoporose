@@ -1,17 +1,26 @@
 ---
-
+import Layout from '../Layout/layout.astro';
+import Hero from '../Compontents/hero.astro';
+import PainSection from '../Compontents/painsection.astro';
+import SymptomsSection from '../Compontents/symptons.astro';
+import AboutSection from '../Compontents/about.astro';
+import CausesSection from '../Compontents/causesection.astro';
+import TreatmentsSection from '../Compontents/treatmentsection.astro';
+import Faqsection from '../Compontents/faqsection.astro';	
+import CTASection from '../Compontents/ctasection.astro';
+import Footer from '../Compontents/footer.astro';
+import '../styles/global.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Dr. Luiz Gustavo - Especialista em Osteoporose" description="Especialista em osteoporose com 20+ anos de experiência. Tratamento inovador para recuperar densidade óssea e eliminar dor.">
+	<Hero />
+	<PainSection />
+	<SymptomsSection />
+	<AboutSection />
+	<CausesSection />
+	<TreatmentsSection />
+	<Faqsection />
+	<CTASection />
+	<Footer />
+</Layout>
+
