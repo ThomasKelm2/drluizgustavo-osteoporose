@@ -5,12 +5,12 @@ const causes = [
   {
     number: 1,
     title: "Envelhecimento natural",
-    description: "A partir dos 30 anos, o corpo começa a perder massa óssea gradualmente. Esse processo se acelera na menopausa e após os 60 anos."
+    description: "A partir dos 30 anos, o corpo começa a perder massa óssea gradualmente. <strong>Esse processo se acelera na menopausa e após os 60 anos.</strong>"
   },
   {
     number: 2,
     title: "Baixos níveis de cálcio e vitamina D",
-    description: "Dieta pobre em cálcio ou pouca exposição ao sol prejudicam a saúde dos ossos ao longo dos anos."
+    description: "<strong>Dieta pobre em cálcio ou pouca exposição ao sol</strong> prejudicam a saúde dos ossos ao longo dos anos."
   },
   {
     number: 3,
@@ -25,12 +25,12 @@ const causes = [
   {
     number: 5,
     title: "Sedentarismo e tabagismo",
-    description: "A falta de atividade física e o cigarro comprometem diretamente a densidade e a qualidade óssea."
+    description: "<strong>A falta de atividade física e o cigarro</strong> comprometem diretamente a densidade e a qualidade óssea."
   }
 ];
 ---
 
-<section id="causas" class="causes-section">
+<section id="causesection" class="causes-section">
   <div class="container">
 
     <!-- LEFT COLUMN -->
@@ -52,7 +52,7 @@ const causes = [
             <div class="cause-number">{cause.number}</div>
             <div class="cause-text">
               <h3 class="cause-title">{cause.title}</h3>
-              <p class="cause-desc">{cause.description}</p>
+              <p class="cause-desc" set:html={cause.description} />
             </div>
           </li>
         ))}
